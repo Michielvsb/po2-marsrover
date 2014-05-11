@@ -1,2 +1,10 @@
 \subsection{Animatiefilmpje}
 
+De experimenteel bepaalde bewegingsvergelijking van het karretje bleek erg goed benaderd te kunnen worden door een lineaire vergelijking (zie '8.9 Bijlage 9: Animatiefilmpje').
+Het animatiefilmpje simuleert de beweging van het karretje dan ook alsof het een constante snelheid heeft gedurende het volledige parcours.
+
+De Maplefile bevindt zich in '8.9 Bijlage 9: Animatiefilmpje'. Met behulp van de voorgedefinieerde plot3d-functies (polygonplot3d), plot Maple het parcours en het wagentje in een opeenvolging van frames.
+Verschillende zelfgedefinieerde procedures structureren het plotten van een frame door het onder te verdelen in enkele deeltaken. Zo zijn er de procedures \verb|plot_wagentje| en \verb|plot_wall_part| die voor een gegeven positie (en rotatie voor het wagentje), de nodige matrixbewerkingen uitvoeren en vervolgens het gevraagde object plotten.
+Het parcours is gedefinieerd als een opeenvolging van punten. De muren en het wagentje worden opengetrokken op basis van hun coordinaten in het vlak. De bovenkant van de muren en het karretje zijn loodrechte translaties van het grondvlak. Telkens worden de overeenkomstige zijden als rechthoek geplot, zodat het model gesloten is.
+Het midden tussen de achterwielen en de voorwielen bevindt zich altijd op de lijn van het parcours. Met behulp van eenvoudige goniometrie wordt het karretje gedurende het rijden geroteerd zodat altijd aan deze voorwaarde voldaan is en de constante snelheid over de lijn behouden blijft. Deze vorm van rotatie is slechts een model en komt niet overeen met de bochten die het werkelijke ontwerp maakt.
+De werkelijke rover stuurt enkel met de voorwielen en kan niet in rechte hoeken draaien, wat in het animatiefilmpje wel gebeurt.
