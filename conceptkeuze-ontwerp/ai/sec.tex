@@ -1,2 +1,16 @@
  
 \subsection{AI}
+De aansturende software op de Arduinocontroler laat de radarsensor afwisselend links, vooruit en rechts de afstand meten. Afhankelijk van de gemeten waarden stuurt de software het wagentje bij.
+Van zodra voor de afstandssensor vooruit een muur opmerkt, stopt het wagentje. Afhankelijk van de gemeten waarden links en rechts, weet de software aan welke kant het volgende deel van het traject zich bevindt.
+Indien zich aan beide kanten een muur bevindt, is de rover op de bestemming aangekomen en knippert een LED.
+Wanneer de waarden links en rechts indiceren dat het wagentje zich tussen twee muren bevindt, maar dat de ene muur dichterbij is dan de andere, stuurt de software de baan van de wagen bij.
+
+De software bestaat uit verschillende klassen die abstractie maken van de hardwarespecifieke commando's om de sensoren in te lezen en de actoren aan te sturen.
+Zo is er een MyServo-, LedOutput-, Motor-, DistanceSensor-, MusicPlayer en PushButtonklasse. Deze laatste twee werden niet gebruikt in het uiteindelijke ontwerp, maar het programmeren van de skeletten gebeurde reeds in een eerste fase van het project.
+
+De DrivingManagerklasse is de centrale unit van waaruit de wagen aangestuurd wordt. Deze klasse neemt de beslissingen zoals hierboven beschreven. 
+DrivingManager kan de objecten manipuleren door middel van duidelijke commando's, zonder details over de onderliggende commando's. 
+De methode setMotorSpeed in de klasse Motor regelt zo bijvoorbeeld de snelheid van de motoren en de staat van de relais, zodat ook achteruit gereden kan worden.
+
+Om het testen van de aparte sensoren en actoren te vergemakkelijken, staan er ook enkele demo's in de DrivingManager-klasse. Deze zijn bedoeld om de specifieke elementen te testen. 
+De methode radarDemo roteert bijvoorbeeld de servo waarop de afstandssensor gemonteerd is en de ingelezen waarden van de afstandssensor worden dan (geconverteerd naar centimeter) doorgestuurd via de Serial Monitor. Op die manier kan dit onderdeel gemakkelijker onderzocht worden op problemen als het aangesloten is aan de Arduino IDE\footnote{IDE: Integrated Development Environment (geïntegreerde ontwikkelomgeving).}.
