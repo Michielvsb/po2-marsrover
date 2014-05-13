@@ -1,2 +1,45 @@
  
 \subsection{Elektronisch}
+De aansturing van de Mars Rover gebeurt via een Arduino Uno-controller. Deze 
+microcontroller kan een analoog of digitaal signaal versturen naar het 
+elektronisch gedeelte van het wagentje. Voor het realiseren van een autonome 
+rover staan verschillende sensoren en actuatoren op de wagen gemonteerd die 
+onderling met elkaar communiceren via de controller.
+
+Het meten van de omgeving gebeurt via een optische afstandssensor, gemonteerd op 
+een servomotor. Die heeft een bereik van 0\degree~tot 180\degree~en richt de afstandssensor 
+beurtelings vooruit en zijdelings. Op die manier kan de omgeving in drie 
+richtingen in kaart gebracht worden. De configuratie van een servomotor met een 
+afstandssensor is goedkoper dan drie afstandssensoren die in de te verkennen 
+richtingen gefixeerd worden, maar heeft als nadeel dat de afstand tot obstakels 
+niet continu in elke richting bepaald kan worden.
+
+De afstandssensor bestaat uit een infraroodzender en een lichtsensor. De sensor 
+meet het tijdsverschil tussen het verzenden van het licht en het moment wanneer 
+de lichtsensor een gereflecteerd signaal terug ontvangt en bepaalt zo de afstand 
+tot een obstakel.\cite{SharpDistanceSensor} De keuze viel op deze sensor omdat die de meest bruikbare 
+informatie geeft van alle sensors. Met een lichtsensor is het lastig werken 
+zonder lichtbronnen en als er gewerkt wordt met geleiding (de aluminiumstrip) 
+bestaat de output enkel uit ‘ja of neen’, zonder verdere informatie over de 
+plaats van de rover in zijn omgeving.
+
+Aan het einde van het parcours zal de afstandssensor zowel vooraan, links als 
+rechts het signaal krijgen dat er een obstakel in de weg staat. Dan zal er een 
+LED-licht knipperen.
+
+Om de rover aan te drijven wordt een MM28 DC-motor gebruikt. Het inbrengen van 
+een elektronische schakelaar, namelijk een relais, realiseert de ompoling van de 
+motor. Zo is de rover in staat om in beide richtingen te kunnen rijden. Ook de 
+snelheid kan gevarieerd worden door het gebruik van een MOSFET-transistor zodat 
+de rover in de bochten zijn snelheid kan vertragen.
+
+Voor de besturing van de rover wordt één servomotor gebruikt die aangesloten is 
+op een stuurmechanisme. Aan de hand van een stuursignaal, gebaseerd op 
+pulsbreedtes, kan de servomotor in de gewenste hoek geplaatst worden.
+
+Aangezien er geen grote stromen door de Arduino-controller mogen lopen (maximaal 
+grootteorde van enkele tientallen mA), moeten de signalen en de eigenlijke 
+stroomtoevoer voor de motoren gesplitst worden. Daarom wordt gebruik gemaakt van 
+een MOSFET-transistor. Dit soort transistor sluit de stroomkring met de batterij 
+en de motoren van zodra de drempelspanning overschreden wordt. Deze 
+drempelspanning wordt verkregen tussen gate- en sourcepin van de MOSFET.\cite{MosfetBitwizard} 

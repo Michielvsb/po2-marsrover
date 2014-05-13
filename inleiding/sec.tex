@@ -1,12 +1,42 @@
  
 \section{Inleiding}
-Bij het verkennen van de ruimte en andere hemellichamen zijn er verschillende factoren die tot problemen kunnen leiden. De grote afstand is daar één van. Op een andere planeet zou een verkenningsrover hierdoor een vertraging van inkomende en uitgaande signalen ondervinden. Deze vertraging zou tot problemen kunnen leiden bij het besturen van de rover. Dit probleem kan opgelost worden door de rover voor een deel autonoom te maken. Deze kan dan zelf een veilige weg vinden en obstakels ontwijken.
+Bij het verkennen van de ruimte en andere hemellichamen zijn er verschillende 
+factoren die tot problemen kunnen leiden. De grote afstand is daar één van. Op 
+een andere planeet zou een verkenningsrover hierdoor een vertraging van 
+inkomende en uitgaande signalen ondervinden. Deze vertraging zou tot problemen 
+kunnen leiden bij het besturen van de rover. Dit probleem kan opgelost worden 
+door de rover voor een deel autonoom te maken. Deze kan dan zelf een veilige weg 
+vinden en obstakels ontwijken.
 
-De marsrover Curiosity is een voorbeeld van zo’n autonome rover. Deze bezit 17 camera's waarmee hij zijn omgeving kan aftasten. Aan de hand van de verzamelde informatie kan de Curiosity een veilig pad over het marsoppervlak vinden. Dit spaart tijd uit voor de bestuurders van de rover op aarde.\cite{NASACuriosity, NASA2013-259} 
+De marsrover Curiosity is een voorbeeld van zo’n autonome rover. Deze bezit 17 
+camera's waarmee hij zijn omgeving kan aftasten. Aan de hand van de verzamelde 
+informatie kan de Curiosity een veilig pad over het marsoppervlak vinden. Dit 
+spaart tijd uit voor de bestuurders van de rover op aarde.\cite{NASACuriosity, 
+NASA2013-259} 
 
-De specifieke opdracht bestaat uit het ontwerpen van een wagentje dat autonoom een vooraf onbekend parcours moet afleggen. Het parcours is maximaal 12 m lang, minimaal 40 cm breed en de afbakenende muren zijn 18 cm hoog. De af te leggen weg bestaat uit rechte hoeken en er zijn geen plaatsen waarin het wagentje vast kan komen te zitten (er zijn geen doodlopende zijwegen). Het wagentje moet het parcours zo snel mogelijk afleggen en bij het bereiken van de finish een visueel of auditief signaal geven. De totaalprijs van het ontwerp mag maximaal \euro 80 bedragen.
+De specifieke opdracht bestaat uit het ontwerpen van een wagentje dat autonoom 
+een vooraf onbekend parcours moet afleggen. Het parcours is maximaal 12 m lang, 
+minimaal 40 cm breed en de afbakenende muren zijn 18 cm hoog. De af te leggen 
+weg bestaat uit rechte hoeken en er zijn geen plaatsen waarin het wagentje vast 
+kan komen te zitten (er zijn geen doodlopende zijwegen). Het wagentje moet het 
+parcours zo snel mogelijk afleggen en bij het bereiken van de finish een visueel 
+of auditief signaal geven. De totaalprijs van het ontwerp mag maximaal \euro 80 
+bedragen.
 
-Met behulp van een afstandssensor verzamelt de wagen informatie over de omgeving. De Arduino Uno-controller ontvangt de metingen. Daarna verwerkt deze  de informatie en zendt dan weer aan de hand van computercode signalen uit naar de motoren en het stuurmechanisme zodat de wagen op de juiste baan blijft. Op deze manier kan de wagen autonoom een vooraf onbekend parcours afleggen, zoals de opdracht vereist.
+Met behulp van een afstandssensor verzamelt de wagen informatie over de 
+omgeving. De Arduino Uno-controller ontvangt de metingen. Daarna verwerkt deze  
+de informatie en zendt dan weer aan de hand van computercode signalen uit naar 
+de motoren en het stuurmechanisme zodat de wagen op de juiste baan blijft. Op 
+deze manier kan de wagen autonoom een vooraf onbekend parcours afleggen, zoals 
+de opdracht vereist.
 
-In dit verslag zal in het eerste deel de definitieve conceptkeuze, met name het mechanische en elektronische ontwerp aan bod komen. Ook de materiaalkeuze voor de rover komt hier aan bod. De volgende sectie “Experimenten” bevat de ontwerpberekeningen en de uitgevoerde experimenten. Deze zijn ondersteund met informatie uit bijlages A en B. Daarna volgt een bespreking van de resultaten van de demonstratie. Als laatste wordt het behalen van de deadlines besproken.
-Doorheen het verslag zullen er enkele belangrijke bevindingen aan bod komen. De theoretische optimale overbrengingsverhouding kan bijvoorbeeld niet behaald worden. De luchtweerstand is pas merkbaar bij hoge snelheden en kan dus verwaarloosd worden bij het rijden op het parcours.  
+In dit verslag zal in het eerste deel de definitieve conceptkeuze, met name het 
+mechanische en elektronische ontwerp aan bod komen. Ook de materiaalkeuze voor 
+de rover komt hier aan bod. De volgende sectie “Experimenten” bevat de 
+ontwerpberekeningen en de uitgevoerde experimenten. Deze zijn ondersteund met 
+informatie uit bijlages A en B. Daarna volgt een bespreking van de resultaten 
+van de demonstratie. Als laatste wordt het behalen van de deadlines besproken.
+Doorheen het verslag zullen er enkele belangrijke bevindingen aan bod komen. De 
+theoretische optimale overbrengingsverhouding kan bijvoorbeeld niet behaald 
+worden. De luchtweerstand is pas merkbaar bij hoge snelheden en kan dus 
+verwaarloosd worden bij het rijden op het parcours.  
