@@ -3,19 +3,22 @@
 \subsection{Afstandsmeter als snelheidsmeter}
 In combinatie met een apparaat dat het verschil in golflengte meet, zou de afstandsmeter gebruikt kunnen worden als snelheidsmeter. Dit kan door het Doppler effect. De voorwaartse verplaatsing van de wagen zal er immers voor zorgen dat de golflengte korter wordt. Door deze verandering van golflengte kan de snelheid berekend worden.\\
 
-De snelheid van het geluid is gegeven, namelijk $343 \frac{m}{s}$. De frequentie van de afstandssensor is gegeven.
-$$f=\frac{780}{10^{19}}$$
+De snelheid van elektromagnetische golven is gegeven, namelijk $299792458 \frac{m}{s}$. De golflengte van de afstandssensor is ook gegeven. $$\lambda = \frac{780}{10^{19}}$$
+De frequentie van de afstandsmeter is de lichtsnelheid gedeeld door de golflengte.
+\begin{equation}
+f'=\frac{f}{1-\frac{v_{source}}{c}}
+\end{equation}
 
 De uitgezonden golf ondervindt al de effecten van het Doppler effect en dus wordt de nieuwe frequentie gegeven door de volgende formule.
 \begin{equation}
-f'=\frac{f}{1-\frac{v_{source}}{v_{sound}}}
+f'=\frac{f}{1-\frac{v_{source}}{c}}
 \end{equation}
-De golf die de wagen bereikt is terug be\"invloed door het Doppler effect.
+De golf die de wagen bereikt is terug beïnvloed door het Doppler effect.
 \begin{equation}
-f_{percieved}=\left(1+\frac{v_{source}}{v_{sound}}\right)*f'
+f_{percieved}=\left(1+\frac{v_{source}}{c}\right)*f'
 \end{equation}
 
 Ten slotte kan met de volgende formule de snelheid van de wagen berekend worden.
 \begin{equation}
-v_{source} = \frac{\left(\frac{f_{percieved}}{f}\right)*v_{sound}-v_{sound}}{1+\frac{f_{percieved}}{f}}
+v_{source} = \frac{\left(\frac{f_{percieved}}{f}\right)*c-c}{1+\frac{f_{percieved}}{f}}
 \end{equation}
