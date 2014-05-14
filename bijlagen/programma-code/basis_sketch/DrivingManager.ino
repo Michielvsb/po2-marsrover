@@ -61,8 +61,6 @@ void DrivingManager::turn(int turn_direction, int angle, int duration){
   this->motor.setMotorSpeed(0.8);
   delay(duration);
   this->steering_servo.setAngle(FRONT);
-  //TODO: how long would this take?
-  //Important! U-turns!
 }
 void DrivingManager::handleSideDistance(double left_distance, double right_distance){
   if(left_distance > 30){
@@ -130,8 +128,7 @@ void DrivingManager::loop(){
   this->handleFrontDistance(front_distance);
   delay(500);
   //measure left distance, if too close: steer right. if nothing left: turn
-  double left_distance = this->measureDistance(LEFT);
-  //TODO: should we check FRONT? how much additional time is needed for this?
+//   double left_distance = this->measureDistance(LEFT);
   double front_distance2 = this->measureDistance(FRONT);
   //measure right distance, if too close: steer left. If nothing right: turn
   double right_distance = this->measureDistance(RIGHT);
