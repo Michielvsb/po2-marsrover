@@ -6,19 +6,22 @@ In combinatie met een apparaat dat het verschil in golflengte meet, zou de afsta
 De snelheid van elektromagnetische golven is gegeven, namelijk $299792458 \frac{m}{s}$. De golflengte van de afstandssensor is ook gegeven. $$\lambda = \frac{780}{10^{19}}$$
 De frequentie van de afstandsmeter is de lichtsnelheid gedeeld door de golflengte.
 \begin{equation}
-f'=\frac{f}{1-\frac{v_{source}}{c}}
+f=\frac{c}{\lambda}=3,445890322*10^{14}
 \end{equation}
 
-De uitgezonden golf ondervindt al de effecten van het Doppler effect en dus wordt de nieuwe frequentie gegeven door de volgende formule.
+De uitgezonden golf die de muur ontvangt, is al verandert door het Doppler effect. In dit geval is de wagen de bron en de muur de ontvanger. Omdat de bron naar de ontvanger toe beweegt is de nieuwe frequentie gegeven door de volgende formule.
 \begin{equation}
 f'=\frac{f}{1-\frac{v_{source}}{c}}
 \end{equation}
-De golf die de wagen bereikt is terug beïnvloed door het Doppler effect.
+
+De frequentie van de weerkaatste golf zal onveranderd zijn. De golf die de muur uitzendt op de wagen heeft dus ook dezelfde frequentie. Deze keer blijft de bron stationair en beweegt de ontvanger, de wagen, naar de bron toe. De golf die de wagen opvangt is bijgevolg terug beïnvloed door het Doppler effect. De opgevangen frequentie wordt gegeven door volgende formule.
 \begin{equation}
 f_{perceived}=\left(1+\frac{v_{source}}{c}\right)*f'
 \end{equation}
 
-Ten slotte kan met de volgende formule de snelheid van de wagen berekend worden.
+Deze formules omgevormd naar de snelheid geeft ons volgende vergelijking.
 \begin{equation}
 v_{source} = \frac{\left(\frac{f_{perceived}}{f}\right)*c-c}{1+\frac{f_{perceived}}{f}}
 \end{equation}
+Een plot voor realistische snelheidswaarden geeft een bijna lineair verband tussen de opgevangen frequentie en de snelheid van de wagen.
+Alle formules en theorie van 
