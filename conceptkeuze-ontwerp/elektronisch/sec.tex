@@ -19,27 +19,17 @@ meet het tijdsverschil tussen het verzenden van het licht en het moment wanneer
 de lichtsensor een gereflecteerd signaal terug ontvangt en bepaalt zo de afstand 
 tot een obstakel.\cite{SharpDistanceSensor} De keuze viel op deze sensor omdat die de meest bruikbare 
 informatie geeft van alle sensors. Met een lichtsensor is het lastig werken 
-zonder lichtbronnen en als er gewerkt wordt met geleiding (de aluminiumstrip) 
-bestaat de output enkel uit ‘ja of neen’, zonder verdere informatie over de 
-plaats van de rover in zijn omgeving.
+zonder lichtbronnen. Een andere optie is het gebruik van sleepcontacten op een geleidende ondergrond (de aluminiumstrip). Een lichtsensor geeft echter meer informatie over de precieze positie van de wagen in zijn omgeving.
+
+Voor de besturing van de rover wordt één servomotor gebruikt die aangesloten is 
+op een stuurmechanisme. Aan de hand van een PWM-signaal, gebaseerd op 
+pulsbreedtes, kan de servomotor in de gewenste hoek geplaatst worden.
+
+Aangezien een Arduino-microcontroller geen grote stromen kan leveren, moeten signaalstromen en voedingsstromen gesplitst worden. Daarom wordt er gebruik gemaakt van veldeffecttransistoren met drie pinnen (gate, drain en soource). Wij gebruiken n-type MOSFETS. Bij dit type is de stroom tussen drain en source afhankelijk van de spanning tussen gate en source. 
+Boven een zekere drempelspanning gaat de MOSFET volledig in geleiding. Op die manier kunnen we de motoren niet enkel aan en uitschakelen, maar ook het vermogen regelen en daarmee het toerental en de uiteindelijke snelheid van de rover.\cite{MosfetBitwizard} 
+
+Om de wagen aan te drijven wordt een MM28 DC-motor gebruikt. Wanneer het een muur te dicht nadert, moet het in staat zijn om achteruit te rijden. In de praktijk komt dit neer op het ompolen van de motoren. Om dit te automatiseren wordt er gebruik gemaakt van een dubbele relais. Waneer er spanning op de spoel in de relais wordt gezet, zullen beide schakelaren in de relais omkeren en zal de positieve pool de negatieve worden en omgekeerd. De relais dissipeert meer stroom dan door de Arduino geleverd kan worden. Daarom wordt ook hier een MOSFET gebruikt om voedings- en signaalstroom van elkaar te isoleren. 
 
 Aan het einde van het parcours zal de afstandssensor zowel vooraan, links als 
 rechts het signaal krijgen dat er een obstakel in de weg staat. Dan zal er een 
-LED-licht knipperen.
-
-Om de rover aan te drijven wordt een MM28 DC-motor gebruikt. Het inbrengen van 
-een elektronische schakelaar, namelijk een relais, realiseert de ompoling van de 
-motor. Zo is de rover in staat om in beide richtingen te kunnen rijden. Ook de 
-snelheid kan gevarieerd worden door het gebruik van een MOSFET-transistor zodat 
-de rover in de bochten zijn snelheid kan vertragen.
-
-Voor de besturing van de rover wordt één servomotor gebruikt die aangesloten is 
-op een stuurmechanisme. Aan de hand van een stuursignaal, gebaseerd op 
-pulsbreedtes, kan de servomotor in de gewenste hoek geplaatst worden.
-
-Aangezien er geen grote stromen door de Arduino-controller mogen lopen (maximaal 
-grootteorde van enkele tientallen mA), moeten de signalen en de eigenlijke 
-stroomtoevoer voor de motoren gesplitst worden. Daarom wordt gebruik gemaakt van 
-een MOSFET-transistor. Dit soort transistor sluit de stroomkring met de batterij 
-en de motoren van zodra de drempelspanning overschreden wordt. Deze 
-drempelspanning wordt verkregen tussen gate- en sourcepin van de MOSFET.\cite{MosfetBitwizard} 
+LED knipperen.
