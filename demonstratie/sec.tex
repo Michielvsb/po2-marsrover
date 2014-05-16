@@ -1,2 +1,27 @@
 
 \section{Resultaten demonstratie}
+De marswagen is in mate van het mogelijke in orde gebracht voor de demonstratie. 
+De servomotor van het radarsysteem, die tijdens enkele tests het begaf, is 
+vervangen door een andere servomotor. De software echter is echter niet binnen 
+de overige beschikbare tijd aangepast kunnen worden. Daarom wordt slechts een 
+beperkt onderdeel van de gehele code geactiveerd. De marswagen zal hierdoor 
+enkel in staat zijn rechtdoor te rijden en bij het tegenkomen van de muur zijn 
+eindsignaal geven.
+Naar aanvang van de demonstratie, wordt het wagentje geplaatst op het parcours. 
+De wagen begint te rijden na het induwen van de reset knop. De wagen versnelt 
+een korte tijd, waarna de motoren worden uitgeschakeld. Deze onderbreking dient 
+als een snelheidsbeperking, dit geeft de tijd die nodig is voor het bijsturen 
+van het wagentje. Echter bijsturen doet het niet, aangezien het draaien van de 
+radar is uitgeschakeld. Zo komt het wagentje nog voor het einde van het eerste 
+rechte stuk tot stilstand. Het wijkt lichtjes af waardoor de afstandsensor, die 
+voorwaarts gericht staat, de linkerzijmuur waarneemt en het wagentje tot 
+stilstand wordt gebracht. Ingesteld als eindsignaal, begint een van de LEDjes 
+van de Arduino Uno-controller te branden. Dit wordt echter niet bemerkt door de 
+assistenten en de jury, omdat dit maar een klein, onopvallend signaal is en er 
+een GPIO kabel het zicht blokkeerde.
+De marsauto heeft het parcours niet helemaal afgelegd zoals verwacht. De wagen 
+haalde het einde van het eerste rechte stuk niet, dit door een lichte afwijking 
+die niet kan worden gecorrigeerd. Wel geeft het een eindsignaal bij het bemerken 
+van een muur op bepaalde afstand aan de voorzijde van het wagentje. Ook de 
+snelheid die het wagentje maximaal bereikt, is laag genoeg om manoeuvres uit te 
+voeren.
